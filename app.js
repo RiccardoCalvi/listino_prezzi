@@ -15,7 +15,7 @@ const cities = getDataFromJsonFile('cities.json');
 // ========================================================================
 // API
 
-app.use('/api/arrivals', (req, res) => {
+app.use('/api/listino', (req, res) => {
   let r = {
     data: []
   };

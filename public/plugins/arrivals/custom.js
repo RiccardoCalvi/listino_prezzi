@@ -27,7 +27,7 @@ sf.plugins.arrivals = {
   dataType: 'json',
 
   url: function(options) {
-    return 'api/arrivals';
+    return 'api/listino';
   },
 
   formatData: function(response) {

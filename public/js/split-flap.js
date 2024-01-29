@@ -94,7 +94,6 @@ sf.board = {
 // at options.pageInterval.
 sf.Items = Backbone.Collection.extend({
   update: function(options) {
-    console.log('Fetching Data', items.url);
     this.fetch({
       success: function(response) {
         const results = response.toJSON(),
