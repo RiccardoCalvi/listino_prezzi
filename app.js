@@ -11,9 +11,15 @@ function getDataFromJsonFile(filePath) {
 
 const airlines = getDataFromJsonFile('airlines.json');
 const cities = getDataFromJsonFile('cities.json');
+const info = getDataFromJsonFile('info.json');
 
 // ========================================================================
 // API
+
+app.use('/api/info', (req, res) => {
+  let r = info;
+  res.json(r);
+});
 
 app.use('/api/listino', (req, res) => {
   let r = {
