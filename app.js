@@ -21,7 +21,7 @@ const info = getDataFromJsonFile('info.json');
 
 app.use('/api/info', (req, res) => {
   let r = info;
-  res.json(r);
+  res.json(r); 
 });
 
 app.use('/api/listino', (req, res) => {
