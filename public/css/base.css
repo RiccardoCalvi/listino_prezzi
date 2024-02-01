@@ -379,3 +379,8 @@ img.logo{
   display: flex; 
   justify-content: center;
 }
+#orologio {
+  font-size: 52px;
+  text-align: center;
+  margin-top: 25px;
+}

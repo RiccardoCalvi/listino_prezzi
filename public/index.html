@@ -57,6 +57,29 @@
                 </div>  
             </script>
         </div>
+        <div class="container">
+            <h3 class="header" id="orologio"></h3>
+
+        </div>
+
+        <script>
+            function aggiornaOrologio(){
+                var oraAttuale = new Date();
+                var ore = oraAttuale.getHours();
+                var minuti = oraAttuale.getMinutes();
+                
+                ore = ore < 10 ? "0" + ore : ore;
+                minuti = minuti < 10 ? "0" + minuti : minuti;
+                
+                var tempo = ore + ":" + minuti;
+                
+                document.getElementById('orologio').textContent = tempo;
+            }
+            
+            aggiornaOrologio();
+            setInterval(aggiornaOrologio, 1000);
+        </script>
+            
 
         <!-- ============================================ -->
         <!-- JS LIBRARIES -->
