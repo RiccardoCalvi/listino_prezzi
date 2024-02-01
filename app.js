@@ -5,7 +5,8 @@ const app = express();
 const fs = require('fs');
 
 function getDataFromJsonFile(filePath) {
-  const rawData = fs.readFileSync(filePath);
+  const fullPath = path.join(__dirname, filePath);
+  const rawData = fs.readFileSync(fullPath);
   return JSON.parse(rawData);
 }
 
