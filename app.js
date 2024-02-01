@@ -47,7 +47,7 @@ app.use('/api/listino', (req, res) => {
 
 // ========================================================================
 // STATIC FILES
-app.use('/', express.static('public'));
+app.use('/', express.static(path.join( __dirname, 'public') ));
 
 // ========================================================================
 // WEB SERVER
