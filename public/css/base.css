@@ -390,11 +390,11 @@ a {
   margin-left: 2rem;
 }
 #title {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 25px;
 }
 #artist {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 25px;
 }
 #cover {
@@ -403,12 +403,12 @@ a {
 #titolo_riproduzione{
   text-align: center;
   font-size: 32px;
+  margin-top: 0;
 }
 #header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  gap: 5;
 }
 #spotify {
   margin: 0 auto;
