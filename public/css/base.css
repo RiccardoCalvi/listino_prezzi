@@ -369,18 +369,24 @@ a {
 .logo{
   display: block;
   max-width: 350px; 
-  margin: 60px auto;
+  margin: 100px auto 35px auto;
 }
 .container{
   margin: 0 auto;
   display: flex; 
   justify-content: center;
 }
-#orologio {
+#orologio.headcontent {
   font-size: 40px;
   position: absolute;
   top: -25px;
   right: 100px;
+}
+#data.headcontent {
+  font-size: 25px;
+  position: absolute;
+  top: -5px;
+  left: 100px
 }
 #songinfo {
   display: flex;

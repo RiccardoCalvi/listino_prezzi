@@ -11,9 +11,6 @@ function aggiornaOrologio(){
     document.getElementById('orologio').textContent = tempo;
 }
 
-aggiornaOrologio();
-setInterval(aggiornaOrologio, 1000);
-
 function riproduzioneSpotify() {
     fetch('/now-playing')
     .then(response => response.json())
@@ -36,5 +33,22 @@ function riproduzioneSpotify() {
     });
 }
 
+function mostraData() {
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      };
+    var oggi = new Date();
+    var dataStringa = oggi.toLocaleDateString('it-IT', options);
+    document.getElementById('data').textContent = dataStringa;
+}
+
+mostraData();
+
 riproduzioneSpotify();
 setInterval(riproduzioneSpotify, 5000);
+
+aggiornaOrologio();
+setInterval(aggiornaOrologio, 1000);
