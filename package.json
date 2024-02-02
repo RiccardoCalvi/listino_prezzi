@@ -7,6 +7,13 @@
   "author": "Pete Butler <pbutler@basdesign.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^1.6.7",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "qs": "^6.11.2",
+    "querystring": "^0.2.0",
+    "request": "^2.88.2",
+    "spotify-web-api-node": "^5.0.2"
   }
 }

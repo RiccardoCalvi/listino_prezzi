@@ -16,6 +16,7 @@
     <body>
         <!-- ============================================ -->
         <!-- CONTAINER -->
+        <h3 class="header" id="orologio"></h3>
         <img src="img/incontro_logo.svg" class="logo">
         <div class="container">
 
@@ -57,30 +58,18 @@
                 </div>  
             </script>
         </div>
-        <div class="container">
-            <h3 class="header" id="orologio"></h3>
 
+        <h3 id="titolo_riproduzione">State Ascoltando</h3>
+        <div id="songinfo">
+            <img id="cover" alt="Copertina">
+            <span>
+                <h1 id="title">Titolo: </h1>
+                <h2 id="artist">Artista: </h2>
+            </span>
         </div>
 
-        <script>
-            function aggiornaOrologio(){
-                var oraAttuale = new Date();
-                var ore = oraAttuale.getHours();
-                var minuti = oraAttuale.getMinutes();
-                
-                ore = ore < 10 ? "0" + ore : ore;
-                minuti = minuti < 10 ? "0" + minuti : minuti;
-                
-                var tempo = ore + ":" + minuti;
-                
-                document.getElementById('orologio').textContent = tempo;
-            }
+        <script src="js/utility.js"></script>
             
-            aggiornaOrologio();
-            setInterval(aggiornaOrologio, 1000);
-        </script>
-            
-
         <!-- ============================================ -->
         <!-- JS LIBRARIES -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
