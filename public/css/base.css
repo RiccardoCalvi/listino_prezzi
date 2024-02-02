@@ -392,12 +392,12 @@ a {
   margin-left: 2rem;
 }
 #title {
-
+  font-family: "Trocchi", serif;
   font-size: 28px;
   margin-top: 25px;
 }
 #artist {
-
+  font-family: "Trocchi", serif;
   font-size: 20px;
   margin-top: 25px;
 }

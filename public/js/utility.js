@@ -18,6 +18,7 @@ function riproduzioneSpotify() {
         if (data.isPlaying) {
             document.getElementById('title').textContent = data.trackName;
             document.getElementById('artist').textContent = data.artistName;
+            document.getElementById('titolo_riproduzione').hidden = false;
             const trackImage = document.getElementById('cover');
             trackImage.src = data.albumArt;
             trackImage.hidden = false;
