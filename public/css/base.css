@@ -377,9 +377,11 @@ a {
   justify-content: center;
 }
 #orologio.headcontent {
+  font-family: "Trocchi", serif;
   font-size: 40px;
 }
 #data.headcontent {
+  font-family: "Trocchi", serif;
   font-size: 25px;
 }
 #songinfo {
@@ -401,6 +403,7 @@ a {
   width: 150px;
 }
 #titolo_riproduzione{
+  font-family: "Trocchi", serif;
   text-align: center;
   font-size: 32px;
   margin-top: 0;
