@@ -369,7 +369,7 @@ a {
 .logo{
   display: block;
   max-width: 350px; 
-  margin: 100px auto 35px auto;
+  margin: 0px auto 35px auto;
 }
 .container{
   margin: 0 auto;
@@ -378,15 +378,9 @@ a {
 }
 #orologio.headcontent {
   font-size: 40px;
-  position: absolute;
-  top: -25px;
-  right: 100px;
 }
 #data.headcontent {
   font-size: 25px;
-  position: absolute;
-  top: -5px;
-  left: 100px
 }
 #songinfo {
   display: flex;
@@ -412,4 +406,11 @@ a {
 }
 #header {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5;
+}
+#spotify {
+  margin: 0 auto;
+  width: 90%;
 }

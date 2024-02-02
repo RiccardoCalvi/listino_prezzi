@@ -4,19 +4,28 @@ const path = require('path');
 const app = express();
 var SpotifyWebApi = require('spotify-web-api-node');
 
-function getDataFromJsonFile(filePath) {
-  const fullPath = path.join(__dirname, filePath);
-  const rawData = fs.readFileSync(fullPath);
-  return JSON.parse(rawData);
+var credentials = null;
+
+if (fs.existsSync('credentials.json')) {
+  const rawData = fs.readFileSync('credentials.json');
+  credentials = JSON.parse(rawData);
+} else {
+  console.error('Il file credentials.json non esiste.');
 }
 
 const airlines = getDataFromJsonFile('airlines.json');
 const cities = getDataFromJsonFile('cities.json');
 const info = getDataFromJsonFile('info.json');
 
-const clientId = '035eac89722942ebb4b83ab2882308c2';
-const clientSecret = 'bf11fad4440c40c09c467ea5611ddf21';
+const clientId = credentials.clientId
+const clientSecret = credentials.clientSecret;
 const redirectUri = 'http://localhost:8080/callback';
+
+function getDataFromJsonFile(filePath) {
+  const fullPath = path.join(__dirname, filePath);
+  const rawData = fs.readFileSync(fullPath);
+  return JSON.parse(rawData);
+}
 
 // Create the api object with the credentials
 var spotifyApi = new SpotifyWebApi({
