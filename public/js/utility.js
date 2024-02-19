@@ -35,15 +35,7 @@ function riproduzioneSpotify() {
 }
 
 function mostraData() {
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      };
-    var oggi = new Date();
-    var dataStringa = oggi.toLocaleDateString('it-IT', options);
-    document.getElementById('data').textContent = dataStringa;
+    document.getElementById('data').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', month: 'long', day: 'numeric'});
 }
 
 mostraData();
