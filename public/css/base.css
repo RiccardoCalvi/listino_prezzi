@@ -1,13 +1,14 @@
 body {
-  /* background: #fff; */
   background: #0f0f0f;
   color: #fff;
   font-family: helvetica, sans-serif;
 }
+
 a {
   color: #fff;
   text-decoration: none;
 }
+
 .splitflap {
   overflow: none;
   white-space: nowrap;
@@ -55,45 +56,32 @@ a {
   background-position: -18px 0;
 }
 .splitflap .status .sA {
-  background: url('../img/lights_green.png') no-repeat;
+  background: url("../img/lights_green.png") no-repeat;
 }
 .splitflap .status .sB {
-  background: url('../img/lights_red.png') no-repeat;
+  background: url("../img/lights_red.png") no-repeat;
 }
-.splitflap .full,
-.splitflap .number,
-.splitflap .character {
+.splitflap .full {
   float: left;
   margin-right: 5px;
   width: 25px;
   height: 40px;
-  background: url('../img/split-flap-letters-yellow-sm-full.png') no-repeat;
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
   background-position: 0px 0px;
 }
-.splitflap .full span,
-.splitflap .number span,
-.splitflap .character span {
+.splitflap .full span {
   width: 25px;
   height: 40px;
   display: block;
-  background: url('../img/split-flap-letters-yellow-sm-full.png') no-repeat;
-  background-position: -25px 0px; /* start with a space */
-}
-
-/* SPACE AND TRANSITION IMAGES */
-.splitflap span.ctrn {
-  background-position: 0px 0px;
-} /* transition */
-.splitflap span.csp {
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
   background-position: -25px 0px;
-} /* space */
-/* FULL SET DRUM */
+}
 .splitflap .full span.csp {
   background-position: -25px 0px;
-} /* space */
+}
 .splitflap .full span.cA {
   background-position: -50px 0px;
-} /* A */
+}
 .splitflap .full span.cB {
   background-position: -75px 0px;
 }
@@ -168,10 +156,10 @@ a {
 }
 .splitflap .full span.cZ {
   background-position: -675px 0px;
-} /* Z */
+}
 .splitflap .full span.c0 {
   background-position: -700px 0px;
-} /* 0 */
+}
 .splitflap .full span.c1 {
   background-position: -725px 0px;
 }
@@ -198,53 +186,67 @@ a {
 }
 .splitflap .full span.c9 {
   background-position: -925px 0px;
-} /* 9 */
+}
 .splitflap .full span.cper {
   background-position: -950px 0px;
-} /* . */
+}
 .splitflap .full span.ccom {
   background-position: -975px 0px;
-} /* , */
+}
 .splitflap .full span.cque {
   background-position: -1000px 0px;
-} /* ? */
+}
 .splitflap .full span.cexc {
   background-position: -1025px 0px;
-} /* ! */
+}
 .splitflap .full span.csla {
   background-position: -1050px 0px;
-} /* / */
+}
 .splitflap .full span.capo {
   background-position: -1075px 0px;
-} /* ' */
+}
 .splitflap .full span.cplu {
   background-position: -1100px 0px;
-} /* + */
+}
 .splitflap .full span.cmin {
   background-position: -1125px 0px;
-} /* - */
+}
 .splitflap .full span.ccol {
   background-position: -1150px 0px;
-} /* : */
+}
 .splitflap .full span.cat {
   background-position: -1175px 0px;
-} /* @ */
+}
 .splitflap .full span.chsh {
   background-position: -1200px 0px;
-} /* # */
+}
 .splitflap .full span.cup {
   background-position: -1225px 0px;
-} /* ↓ */
+}
 .splitflap .full span.cdn {
   background-position: -1250px 0px;
-} /* ↓ */
-/* NUMBERS ONLY DRUM */
+}
+.splitflap .number {
+  float: left;
+  margin-right: 5px;
+  width: 25px;
+  height: 40px;
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
+  background-position: 0px 0px;
+}
+.splitflap .number span {
+  width: 25px;
+  height: 40px;
+  display: block;
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
+  background-position: -25px 0px;
+}
 .splitflap .number span.csp {
   background-position: -25px 0px;
-} /* space */
+}
 .splitflap .number span.c0 {
   background-position: -700px 0px;
-} /* 0 */
+}
 .splitflap .number span.c1 {
   background-position: -725px 0px;
 }
@@ -271,20 +273,34 @@ a {
 }
 .splitflap .number span.c9 {
   background-position: -925px 0px;
-} /* 9 */
+}
 .splitflap .number span.cper {
   background-position: -950px 0px;
-} /* . */
+}
 .splitflap .number span.ccom {
   background-position: -975px 0px;
-} /* , */
-/* CHARACTERS ONLY DRUM */
+}
+.splitflap .character {
+  float: left;
+  margin-right: 5px;
+  width: 25px;
+  height: 40px;
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
+  background-position: 0px 0px;
+}
+.splitflap .character span {
+  width: 25px;
+  height: 40px;
+  display: block;
+  background: url("../img/split-flap-letters-yellow-sm-full.png") no-repeat;
+  background-position: -25px 0px;
+}
 .splitflap .character span.csp {
   background-position: -25px 0px;
-} /* space */
+}
 .splitflap .character span.cA {
   background-position: -50px 0px;
-} /* A */
+}
 .splitflap .character span.cB {
   background-position: -75px 0px;
 }
@@ -359,62 +375,96 @@ a {
 }
 .splitflap .character span.cZ {
   background-position: -675px 0px;
-} /* Z */
+}
 .splitflap .character span.cper {
   background-position: -950px 0px;
-} /* . */
+}
 .splitflap .character span.ccom {
   background-position: -975px 0px;
-} /* , */
-.logo{
+}
+.splitflap span.ctrn {
+  background-position: 0px 0px;
+}
+.splitflap span.csp {
+  background-position: -25px 0px;
+}
+
+.logo {
   display: block;
-  max-width: 350px; 
+  max-width: 350px;
   margin: -25px auto 35px auto;
 }
-.container{
+
+.container {
   margin: 0 auto;
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
-#orologio.headcontent {
+
+.headcontent {
   font-family: "Trocchi", serif;
-  font-size: 40px;
 }
-#data.headcontent {
-  font-family: "Trocchi", serif;
-  font-size: 25px;
+
+#headerTV {
+  margin: 75px 100px;
+  display: flex;
+  justify-content: space-between;
 }
+#headerTV .logo {
+  max-width: 450px;
+  margin: -15px 0 0 -13rem;
+}
+#headerTV #orologio.headcontent {
+  font-size: 80px;
+}
+#headerTV #data.headcontent {
+  font-size: 60px;
+}
+
 #songinfo {
   display: flex;
   justify-content: center;
 }
-#songinfo span{
+#songinfo span {
   margin-left: 2rem;
 }
+
 #title {
   font-family: "Trocchi", serif;
   font-size: 28px;
   margin-top: 25px;
 }
+
 #artist {
   font-family: "Trocchi", serif;
   font-size: 20px;
   margin-top: 25px;
 }
+
 #cover {
   width: 150px;
 }
-#titolo_riproduzione{
+
+#titolo_riproduzione {
   font-family: "Trocchi", serif;
   text-align: center;
   font-size: 32px;
   margin-top: 0;
 }
+
 #header {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+#header #orologio.headcontent {
+  font-size: 40px;
+  margin-top: 0px;
+}
+#header #data.headcontent {
+  font-size: 25px;
+}
+
 #spotify {
   margin: 0 auto;
   width: 90%;
