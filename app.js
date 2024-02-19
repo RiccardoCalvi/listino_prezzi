@@ -112,6 +112,7 @@ app.get('/api/listino', (req, res) => {
 
 // Static Files
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/tv', express.static(path.join(__dirname, 'public/tv.html')));
 
 // Server Setup
 const port = process.env.PORT || 8080;
