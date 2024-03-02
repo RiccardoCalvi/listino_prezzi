@@ -44,6 +44,7 @@ function mostraOrariBus() {
         .then(data => {
             const container = document.getElementById('orariContainer');
             container.innerHTML = '';
+            container.innerHTML = '<h3 class="titolo">Prossime Partenze</h3>'
             data.forEach(linea => {
                 const elemento = document.createElement('span');
                 elemento.className = "orario"
