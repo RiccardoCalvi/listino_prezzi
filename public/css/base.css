@@ -425,11 +425,13 @@ h3 {
   font-size: 25px;
 }
 #header.tv {
-  margin-bottom: 25px;
+  justify-content: space-between;
+  margin: 25px 75px;
 }
 #header.tv .logo {
   display: block;
   max-width: 400px;
+  margin-left: -200px;
 }
 #header.tv #orologio.headcontent {
   font-size: 50px;
