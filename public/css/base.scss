@@ -11,6 +11,12 @@ a {
 	color: $color_1;
 	text-decoration: none;
 }
+h3 {
+	font-family: $font-family_2;
+	text-align: center;
+	font-size: 32px;
+	margin-top: 0;
+}
 .splitflap {
 	overflow: none;
 	white-space: nowrap;
@@ -390,12 +396,6 @@ a {
 		background-position: -25px 0px;
 	}
 }
-
-.logo {
-	display: block;
-	max-width: 350px;
-	margin: -25px auto 35px auto;
-}
 .container {
     margin: 0 auto;
 	display: flex;
@@ -421,18 +421,16 @@ a {
         font-size: 25px !important;
     }
 }
-
-h3 {
-	font-family: $font-family_2;
-	text-align: center;
-	font-size: 32px;
-	margin-top: 0;
-}
-
 #header {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	.logo {
+		display: block;
+		max-width: 350px;
+		margin-bottom: 50px;
+		//margin: -25px auto 35px auto;
+	}
     #orologio.headcontent {
         font-size: 40px;
         margin-top: 0px;
@@ -467,25 +465,25 @@ h3 {
 	}
 }
 
-#orariContainer{
-	width: 40%;
-	.orario {
-		text-align: center;
-		display: block;
-		margin: 2rem 0;
-		h4 {
-			font-size: 28px;
-		}
-		h4, p{
-			margin: 0;
-		}
-		.ora {
-			font-size: 20px;
-		}
-	}
-}
-
 #utility {
 	display: flex;
 	justify-content: space-evenly;
+
+	#orariContainer{
+		width: 40%;
+		.orario {
+			text-align: center;
+			display: block;
+			margin: 2rem 0;
+			h4 {
+				font-size: 28px;
+			}
+			h4, p{
+				margin: 0;
+			}
+			.ora {
+				font-size: 20px;
+			}
+		}
+	}
 }
