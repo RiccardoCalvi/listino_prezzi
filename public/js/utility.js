@@ -54,6 +54,7 @@ function mostraOrariBus() {
 }
 
 mostraOrariBus();
+setInterval(mostraOrariBus, 1000);
 
 mostraData();
 
