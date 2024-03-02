@@ -409,6 +409,8 @@ a {
   margin: 75px 100px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 4;
 }
 #headerTV .logo {
   max-width: 450px;
@@ -418,7 +420,7 @@ a {
   font-size: 80px;
 }
 #headerTV #data.headcontent {
-  font-size: 45px;
+  font-size: 25px !important;
 }
 
 #songinfo {
@@ -445,7 +447,7 @@ a {
   width: 150px;
 }
 
-#titolo_riproduzione {
+h3 {
   font-family: "Trocchi", serif;
   text-align: center;
   font-size: 32px;
@@ -466,6 +468,17 @@ a {
 }
 
 #spotify {
-  margin: 0 auto;
-  width: 90%;
+  width: 60%;
+}
+
+#orariContainer {
+  width: 40%;
+}
+#orariContainer p {
+  text-align: center;
+}
+
+#utility {
+  display: flex;
+  justify-content: space-evenly;
 }

@@ -24,27 +24,19 @@ const redirectUri = 'http://localhost:8080/callback';
 let refreshToken;
 let expirationTime;
 
-function getDataFromJsonFile(filePath) {
-  const fullPath = path.join(__dirname, filePath);
-  const rawData = fs.readFileSync(fullPath);
-  return JSON.parse(rawData);
-}
-
-// Create the api object with the credentials
 var spotifyApi = new SpotifyWebApi({
   clientId: clientId,
   clientSecret: clientSecret,
   redirectUri: redirectUri
 });
 
-// Rotta per iniziare il processo di autenticazione
+// Endpoint
+
 app.get('/login', (req, res) => {
   const scopes = ['user-read-playback-state'];
   res.redirect(spotifyApi.createAuthorizeURL(scopes));
 });
 
-
-// Rotta di callback dopo l'autenticazione
 app.get('/callback', (req, res) => {
   const error = req.query.error;
   const code = req.query.code;
@@ -79,7 +71,6 @@ app.get('/callback', (req, res) => {
   );
 });
 
-
 app.get('/now-playing', (req, res) => {
   spotifyApi.getMyCurrentPlaybackState().then(
     data => {
@@ -102,6 +93,46 @@ app.get('/now-playing', (req, res) => {
   );
 });
 
+app.get('/api/info', (req, res) => {
+  res.json(info); 
+});
+
+app.get('/api/listino', (req, res) => {
+  let r = {
+    data: []
+  };
+  
+  const minLength = Math.min(airlines.length, cities.length);
+  
+  for (let i = 0; i < minLength; i++) {
+    let data = {
+      city: cities[i],
+      scheduled: airlines[i]
+    };
+    r.data.push(data);
+  }
+
+  res.json(r);
+});
+
+app.get('/api/orari', (req, res) => {
+  fs.readFile('orariMezziPubblici.json', (err, data) => {
+    if (err) {
+      res.status(500).send({ error: 'Errore nella lettura del file' });
+      return;
+    }
+
+    res.json(trovaProssimeNavette(JSON.parse(data), new Date().toTimeString().substring(0, 5)));
+  });
+});
+
+// Funzioni
+
+function getDataFromJsonFile(filePath) {
+  const fullPath = path.join(__dirname, filePath);
+  const rawData = fs.readFileSync(fullPath);
+  return JSON.parse(rawData);
+}
 
 function periodicallyRefreshToken() {
   const now = new Date().getTime();
@@ -146,29 +177,15 @@ function periodicallyRefreshToken() {
   }
 }
 
-
-
-app.get('/api/info', (req, res) => {
-  res.json(info); 
-});
-
-app.get('/api/listino', (req, res) => {
-  let r = {
-    data: []
-  };
-  
-  const minLength = Math.min(airlines.length, cities.length);
-  
-  for (let i = 0; i < minLength; i++) {
-    let data = {
-      city: cities[i],
-      scheduled: airlines[i]
+function trovaProssimeNavette(orari, oraAttuale) {
+  return orari.linee.map(linea => {
+    const prossimaPartenza = linea.orariPartenze.find(ora => ora > oraAttuale);
+    return {
+      nomeLinea: linea.nomeLinea,
+      prossimaPartenza: prossimaPartenza || "Nessuna partenza imminente"
     };
-    r.data.push(data);
-  }
-
-  res.json(r);
-});
+  });
+}
 
 // Static Files
 app.use('/', express.static(path.join(__dirname, 'public')));

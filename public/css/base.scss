@@ -412,11 +412,13 @@ a {
     margin: 75px 100px;
     display: flex;
     justify-content: space-between;
+	flex-wrap: nowrap;
+	gap: 4;
     #orologio.headcontent{
         font-size: 80px;
     }
     #data.headcontent {
-        font-size: 45px;
+        font-size: 25px !important;
     }
 }
 #songinfo {
@@ -439,7 +441,7 @@ a {
 #cover {
 	width: 150px;
 }
-#titolo_riproduzione {
+h3 {
 	font-family: $font-family_2;
 	text-align: center;
 	font-size: 32px;
@@ -459,6 +461,17 @@ a {
     }
 }
 #spotify {
-	margin: 0 auto;
-	width: 90%;
+	width: 60%;
+}
+
+#orariContainer{
+	width: 40%;
+	p {
+		text-align: center;
+	}
+}
+
+#utility {
+	display: flex;
+	justify-content: space-evenly;
 }

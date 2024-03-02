@@ -38,6 +38,23 @@ function mostraData() {
     document.getElementById('data').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', month: 'long', day: 'numeric'});
 }
 
+function mostraOrariBus() {
+    fetch('/api/orari')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('orariContainer');
+            console.log(data);
+            data.forEach(linea => {
+                const elemento = document.createElement('p');
+                elemento.textContent = `${linea.nomeLinea}: Prossima partenza alle ${linea.prossimaPartenza}`;
+                container.appendChild(elemento);
+            });
+        })
+        .catch(error => console.error('Errore nel recupero degli orari:', error));
+}
+
+mostraOrariBus();
+
 mostraData();
 
 riproduzioneSpotify();
