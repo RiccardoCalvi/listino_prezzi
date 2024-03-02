@@ -43,6 +43,7 @@ function mostraOrariBus() {
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('orariContainer');
+            container.innerHTML = '';
             data.forEach(linea => {
                 const elemento = document.createElement('span');
                 elemento.className = "orario"
@@ -54,7 +55,8 @@ function mostraOrariBus() {
 }
 
 mostraOrariBus();
-setInterval(mostraOrariBus, 1000);
+setInterval(mostraOrariBus, 10000);
+
 
 mostraData();
 
