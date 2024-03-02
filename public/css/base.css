@@ -407,24 +407,6 @@ h3 {
   margin-bottom: 0;
 }
 
-#headerTV {
-  margin: 75px 100px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 4;
-}
-#headerTV .logo {
-  max-width: 450px;
-  margin: -15px 0 0 -13rem;
-}
-#headerTV #orologio.headcontent {
-  font-size: 80px;
-}
-#headerTV #data.headcontent {
-  font-size: 25px !important;
-}
-
 #header {
   display: flex;
   justify-content: space-around;
@@ -441,6 +423,20 @@ h3 {
 }
 #header #data.headcontent {
   font-size: 25px;
+}
+#header.tv {
+  margin-bottom: 25px;
+}
+#header.tv .logo {
+  display: block;
+  max-width: 400px;
+}
+#header.tv #orologio.headcontent {
+  font-size: 50px;
+  margin-top: 0px;
+}
+#header.tv #data.headcontent {
+  font-size: 40px;
 }
 
 #spotify {
