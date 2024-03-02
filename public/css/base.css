@@ -468,6 +468,37 @@ h3 {
   width: 150px;
   height: 150px;
 }
+#spotify.tv {
+  width: 30%;
+}
+#spotify.tv #songinfo {
+  flex-direction: column;
+}
+#spotify.tv #songinfo span {
+  text-align: center;
+  margin: 0;
+}
+#spotify.tv #orariContainer {
+  width: 100%;
+}
+#spotify.tv #orariContainer h3 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+#spotify.tv #orariContainer .orario {
+  text-align: center;
+  display: block;
+  margin: 1rem 0;
+}
+#spotify.tv #orariContainer .orario h4 {
+  font-size: 24px;
+}
+#spotify.tv #orariContainer .orario h4, #spotify.tv #orariContainer .orario p {
+  margin: 0;
+}
+#spotify.tv #orariContainer .orario .ora {
+  font-size: 20px;
+}
 
 #utility {
   display: flex;
@@ -509,4 +540,11 @@ h3 {
   text-align: center;
   font-size: 28px;
   margin-right: 10px;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 25px;
 }

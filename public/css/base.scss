@@ -463,12 +463,43 @@ h3 {
 		width: 150px;
 		height: 150px;
 	}
+	&.tv{
+		width: 30%;
+		#songinfo {
+			flex-direction: column;
+			span {
+				text-align: center;
+				margin: 0;
+			}
+		}
+		#orariContainer {
+			width: 100%;
+			h3 {
+				font-size: 28px;
+				margin-bottom: 0;
+			}
+			.orario {
+				text-align: center;
+				display: block;
+				margin: 1rem 0;
+				h4 {
+					font-size: 24px;
+				}
+				h4, p{
+					margin: 0;
+				}
+				.ora {
+					font-size: 20px;
+				}
+			}
+		}
+
+	}
 }
 
 #utility {
 	display: flex;
 	justify-content: space-evenly;
-
 	#orariContainer{
 		width: 40%;
 		.orario {
@@ -505,4 +536,10 @@ h3 {
 			margin-right: 10px;
 		}
 	}
+}
+#main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 25px;
 }
