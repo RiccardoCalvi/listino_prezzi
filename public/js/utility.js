@@ -47,7 +47,6 @@ function mostraOrariBus() {
                 const elemento = document.createElement('span');
                 elemento.className = "orario"
                 elemento.innerHTML = `<h4>${linea.nomeLinea}</h4> <p class="ora">${linea.prossimaPartenza}</p>`
-                //elemento.textContent = ;
                 container.appendChild(elemento);
             });
         })

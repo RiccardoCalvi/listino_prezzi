@@ -421,26 +421,7 @@ a {
         font-size: 25px !important;
     }
 }
-#songinfo {
-	display: flex;
-	justify-content: center;
-	span {
-		margin-left: 2rem;
-	}
-}
-#title {
-	font-family: $font-family_2;
-	font-size: 28px;
-	margin-top: 25px;
-}
-#artist {
-	font-family: $font-family_2;
-	font-size: 20px;
-	margin-top: 25px;
-}
-#cover {
-	width: 150px;
-}
+
 h3 {
 	font-family: $font-family_2;
 	text-align: center;
@@ -462,6 +443,27 @@ h3 {
 }
 #spotify {
 	width: 60%;
+	#songinfo {
+		display: flex;
+		justify-content: center;
+		span {
+			margin-left: 2rem;
+		}
+	}
+	#title {
+		font-family: $font-family_2;
+		font-size: 28px;
+		margin-top: 25px;
+	}
+	#artist {
+		font-family: $font-family_2;
+		font-size: 20px;
+		margin-top: 25px;
+	}
+	#cover {
+		width: 150px;
+		height: 150px;
+	}
 }
 
 #orariContainer{
