@@ -50,12 +50,12 @@
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('youtube-video', {
-            height: '550',
+            height: '650',
             width: '1000',
             videoId: 'Y_gsJrefyRQ',
             playerVars: { 
                 'autoplay': 1, // Parte automaticamente
-                'mute': 1,      // In modalità muto
+                'mute': 0,      // In modalità muto
                 'controls':0
             },
             events: {
