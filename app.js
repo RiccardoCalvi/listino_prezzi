@@ -21,6 +21,9 @@ const clientId = credentials.clientId
 const clientSecret = credentials.clientSecret;
 const redirectUri = 'http://localhost:8080/callback';
 
+let refreshToken;
+let expirationTime;
+
 function getDataFromJsonFile(filePath) {
   const fullPath = path.join(__dirname, filePath);
   const rawData = fs.readFileSync(fullPath);
@@ -40,6 +43,7 @@ app.get('/login', (req, res) => {
   res.redirect(spotifyApi.createAuthorizeURL(scopes));
 });
 
+
 // Rotta di callback dopo l'autenticazione
 app.get('/callback', (req, res) => {
   const error = req.query.error;
@@ -53,9 +57,18 @@ app.get('/callback', (req, res) => {
 
   spotifyApi.authorizationCodeGrant(code).then(
     data => {
-      const access_token = data.body['access_token'];
+      const accessToken = data.body['access_token'];
+      refreshToken = data.body['refresh_token'];
+      const expiresIn = data.body['expires_in'];
 
-      spotifyApi.setAccessToken(access_token);
+      spotifyApi.setAccessToken(accessToken);
+      spotifyApi.setRefreshToken(refreshToken);
+
+      // Salva il tempo di scadenza del token
+      expirationTime = new Date().getTime() + expiresIn * 1000;
+
+      // Avvia il controllo periodico per il refresh del token
+      periodicallyRefreshToken();
 
       res.redirect('/');
     },
@@ -65,6 +78,7 @@ app.get('/callback', (req, res) => {
     }
   );
 });
+
 
 app.get('/now-playing', (req, res) => {
   spotifyApi.getMyCurrentPlaybackState().then(
@@ -87,6 +101,52 @@ app.get('/now-playing', (req, res) => {
     }
   );
 });
+
+
+function periodicallyRefreshToken() {
+  const now = new Date().getTime();
+
+  // Calcola il tempo rimanente prima della scadenza del token
+  const delay = expirationTime - now - 5 * 60 * 1000; // Refresh 5 minuti prima della scadenza
+
+  if (delay > 0) {
+    setTimeout(() => {
+      spotifyApi.refreshAccessToken().then(
+        data => {
+          spotifyApi.setAccessToken(data.body['access_token']);
+
+          // Aggiorna il tempo di scadenza con il nuovo token
+          expirationTime = new Date().getTime() + data.body['expires_in'] * 1000;
+
+          console.log('Il token di accesso è stato refreshato e il nuovo tempo di scadenza è stato salvato.');
+
+          // Ripeti il controllo per il prossimo refresh
+          periodicallyRefreshToken();
+        },
+        err => {
+          console.log('Errore durante il refresh del token di accesso', err);
+        }
+      );
+    }, delay);
+  } else {
+    // Se il token è già scaduto, esegue il refresh immediatamente
+    spotifyApi.refreshAccessToken().then(
+      data => {
+        spotifyApi.setAccessToken(data.body['access_token']);
+        expirationTime = new Date().getTime() + data.body['expires_in'] * 1000;
+
+        console.log('Il token di accesso è stato refreshato e il nuovo tempo di scadenza è stato salvato.');
+
+        periodicallyRefreshToken();
+      },
+      err => {
+        console.log('Errore durante il refresh del token di accesso', err);
+      }
+    );
+  }
+}
+
+
 
 app.get('/api/info', (req, res) => {
   res.json(info); 
