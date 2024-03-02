@@ -489,3 +489,16 @@ h3 {
 #utility #orariContainer .orario .ora {
   font-size: 20px;
 }
+
+#footer {
+  display: flex;
+}
+#footer .qrcode {
+  width: 200px;
+}
+#footer #instagram {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

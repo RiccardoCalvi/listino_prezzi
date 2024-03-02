@@ -487,3 +487,15 @@ h3 {
 		}
 	}
 }
+#footer{
+	display: flex;
+	.qrcode{
+		width: 200px;
+	}
+	#instagram {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
