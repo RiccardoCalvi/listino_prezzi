@@ -449,6 +449,7 @@ h3 {
 #spotify #songinfo {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #spotify #songinfo span {
   margin-left: 2rem;
