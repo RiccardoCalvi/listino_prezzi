@@ -43,10 +43,11 @@ function mostraOrariBus() {
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('orariContainer');
-            console.log(data);
             data.forEach(linea => {
-                const elemento = document.createElement('p');
-                elemento.textContent = `${linea.nomeLinea}: Prossima partenza alle ${linea.prossimaPartenza}`;
+                const elemento = document.createElement('span');
+                elemento.className = "orario"
+                elemento.innerHTML = `<h4>${linea.nomeLinea}</h4> <p class="ora">${linea.prossimaPartenza}</p>`
+                //elemento.textContent = ;
                 container.appendChild(elemento);
             });
         })
