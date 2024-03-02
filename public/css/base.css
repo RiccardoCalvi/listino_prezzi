@@ -1,5 +1,5 @@
 body {
-  background: #0f0f0f;
+  background: #000;
   color: #fff;
   font-family: helvetica, sans-serif;
 }
@@ -492,19 +492,20 @@ h3 {
 
 #footer {
   display: flex;
+  justify-content: center;
 }
 #footer .qrcode {
-  width: 100px;
+  width: 150px;
 }
 #footer #instagram {
-  width: 350px;
+  margin-top: 25px;
+  width: 450px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #footer #instagram h5 {
   text-align: center;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-right: 10px;
 }
