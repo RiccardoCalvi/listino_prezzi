@@ -520,20 +520,30 @@ h3 {
 #footer{
 	display: flex;
 	justify-content: center;
-	.qrcode{
+	.qrcode, .calendario{
 		width: 150px;
 	}
-	#instagram {
-		margin-top: 25px;
+	div {
 		width: 575px;
+		margin-top: 25px;
+	}
+	#instagram, #eventi{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		h5 {
-			text-align: center;
-			font-size: 28px;
 			margin-right: 10px;
 		}
+	}
+	h5 {
+		text-align: center;
+		font-size: 28px;
+		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		font-size: 24px;
+		margin: 0;
 	}
 }
 #main{
@@ -542,3 +552,13 @@ h3 {
 	justify-content: center;
 	margin: 0 25px;
 }
+
+#slider {
+	.slide {
+		display: none; 
+	}
+	.active {
+		display: block;
+	}
+}
+  

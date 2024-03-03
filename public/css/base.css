@@ -524,20 +524,30 @@ h3 {
   display: flex;
   justify-content: center;
 }
-#footer .qrcode {
+#footer .qrcode, #footer .calendario {
   width: 150px;
 }
-#footer #instagram {
-  margin-top: 25px;
+#footer div {
   width: 575px;
+  margin-top: 25px;
+}
+#footer #instagram, #footer #eventi {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#footer #instagram h5 {
+#footer #instagram h5, #footer #eventi h5 {
+  margin-right: 10px;
+}
+#footer h5 {
   text-align: center;
   font-size: 28px;
-  margin-right: 10px;
+  margin: 0;
+}
+#footer h4 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
 }
 
 #main {
@@ -545,4 +555,11 @@ h3 {
   align-items: center;
   justify-content: center;
   margin: 0 25px;
+}
+
+#slider .slide {
+  display: none;
+}
+#slider .active {
+  display: block;
 }

@@ -81,12 +81,26 @@
 
         </div>
 
-        <div id="footer">
-            <div id="instagram">
-                <h5>Scatta, Tagga e Sconta -10% @Lincontro_Valcanneto</h5>
-                <img src="img/qrcode_instagram.svg" class="qrcode">
+        <div id="footer">   
+            <div id="slider">
+                <div class="slide active">
+                    <div id="instagram">
+                        <h5>Scatta, Tagga e Sconta -10% @Lincontro_Valcanneto</h5>
+                        <img src="img/qrcode_instagram.svg" class="qrcode">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div id="eventi">
+                        <span>
+                            <h5>Aspettando St. Patrick Day</h5>
+                            <h4>Sabato 16 Marzo dalle 18:00</h4>
+                        </span>
+                        <img src="img/lincontro_calendario_16marzo.png" class="calendario">
+                    </div>
+                </div>
             </div>
         </div>
+          
 
 
         <script src="js/utility.js"></script>
@@ -102,6 +116,22 @@
         <!-- CUSTOM JS FOR THIS BOARD -->
         <script type="text/javascript" src="plugins/arrivals/custom.js"></script>
         <script type="text/javascript">
+
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("slide");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                slides[slideIndex-1].style.display = "block";  
+                setTimeout(showSlides, 15000); // Cambia slide ogni 15 secondi
+            }
+            let slideIndex = 1;
+            showSlides();
+
             // CUSTOMIZATION OPTIONS
             sf.options = {
                 // REQUIRED
@@ -113,8 +143,8 @@
                 // OPTIONAL
                 order: 'asc', // the order to sort by
                 maxResults: 48, // number of items to retrieve from service
-                pageInterval: 30000, // delay between pages (ms)
-                stagger: 2000 // delay between loading rows (ms)
+                pageInterval: 25000, // delay between pages (ms)
+                stagger: 1000 // delay between loading rows (ms)
             };
             
             $(document).ready(function() {
