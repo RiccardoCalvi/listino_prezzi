@@ -1,6 +1,6 @@
 {
-  "name": "Listino prezzi",
-  "version": "1.1.0",
+  "name": "namiak_listino_prezzi",
+  "version": "1.1.1",
   "description": "Listino prezzi Split-Flap",
   "main": "app.js",
   "repository": "https://github.com/RiccardoCalvi/listino_prezzi.git",

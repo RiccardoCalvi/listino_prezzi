@@ -7,15 +7,14 @@ var SpotifyWebApi = require('spotify-web-api-node');
 var credentials = null;
 
 if (fs.existsSync('credentials.json')) {
-  const rawData = fs.readFileSync('credentials.json');
-  credentials = JSON.parse(rawData);
+  credentials = getDataFromJsonFile('credentials.json');
 } else {
   console.error('Il file credentials.json non esiste.');
 }
 
-const airlines = getDataFromJsonFile('airlines.json');
-const cities = getDataFromJsonFile('cities.json');
-const info = getDataFromJsonFile('info.json');
+const prezzi = getDataFromJsonFile('json/prezzi.json');
+const prodotti = getDataFromJsonFile('json/prodotti.json');
+const info = getDataFromJsonFile('json/info.json');
 
 const clientId = credentials.clientId
 const clientSecret = credentials.clientSecret;
@@ -24,6 +23,8 @@ const redirectUri = 'http://localhost:8080/callback';
 let refreshToken;
 let expirationTime;
 
+const port = process.env.PORT || 8080;
+
 var spotifyApi = new SpotifyWebApi({
   clientId: clientId,
   clientSecret: clientSecret,
@@ -31,7 +32,6 @@ var spotifyApi = new SpotifyWebApi({
 });
 
 // Endpoint
-
 app.get('/login', (req, res) => {
   const scopes = ['user-read-playback-state'];
   res.redirect(spotifyApi.createAuthorizeURL(scopes));
@@ -102,12 +102,12 @@ app.get('/api/listino', (req, res) => {
     data: []
   };
   
-  const minLength = Math.min(airlines.length, cities.length);
+  const minLength = Math.min(prezzi.length, prodotti.length);
   
   for (let i = 0; i < minLength; i++) {
     let data = {
-      city: cities[i],
-      scheduled: airlines[i]
+      city: prodotti[i],
+      scheduled: prezzi[i]
     };
     r.data.push(data);
   }
@@ -116,7 +116,7 @@ app.get('/api/listino', (req, res) => {
 });
 
 app.get('/api/orari', (req, res) => {
-  fs.readFile('orariMezziPubblici.json', (err, data) => {
+  fs.readFile('json/orariMezziPubblici.json', (err, data) => {
     if (err) {
       res.status(500).send({ error: 'Errore nella lettura del file' });
       return;
@@ -127,7 +127,6 @@ app.get('/api/orari', (req, res) => {
 });
 
 // Funzioni
-
 function getDataFromJsonFile(filePath) {
   const fullPath = path.join(__dirname, filePath);
   const rawData = fs.readFileSync(fullPath);
@@ -192,7 +191,6 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use('/tv', express.static(path.join(__dirname, 'public/tv.html')));
 
 // Server Setup
-const port = process.env.PORT || 8080;
 app.listen(port, function () {
   console.log(`App listening on port ${port}!`);
 });
