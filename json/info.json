@@ -1,3 +1,20 @@
 [
-    "Ciao benvenuto a casa!"
+    {
+        "tipo": "eventi",
+        "testo": "<span> <h5>Aspettando St. Patrick Day</h5> <h4>Sabato 16 Marzo dalle 18:00</h4> </span>",
+        "immagini": {
+            "classe": "calendario",
+            "src": "img/lincontro_calendario_16marzo.png"
+        }
+        
+    },
+    {
+        "tipo": "instagram",
+        "testo": "<h5>Scatta, Tagga e Sconta -10% @Lincontro_Valcanneto</h5>",
+        "immagini": {
+            "classe": "qrcode",
+            "src": "img/qrcode_instagram.svg"
+        }
+        
+    }
 ]

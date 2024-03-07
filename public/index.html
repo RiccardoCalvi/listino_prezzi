@@ -83,21 +83,6 @@
 
         <div id="footer">   
             <div id="slider">
-                <div class="slide active">
-                    <div id="instagram">
-                        <h5>Scatta, Tagga e Sconta -10% @Lincontro_Valcanneto</h5>
-                        <img src="img/qrcode_instagram.svg" class="qrcode">
-                    </div>
-                </div>
-                <div class="slide">
-                    <div id="eventi">
-                        <span>
-                            <h5>Aspettando St. Patrick Day</h5>
-                            <h4>Sabato 16 Marzo dalle 18:00</h4>
-                        </span>
-                        <img src="img/lincontro_calendario_16marzo.png" class="calendario">
-                    </div>
-                </div>
             </div>
         </div>
           
@@ -118,6 +103,33 @@
         <script type="text/javascript">
 
 
+            function fetchSlidesData() {
+                fetch('/api/info')
+                    .then(response => response.json())
+                    .then(data => {
+                        createSlides(data);
+                        showSlides();
+                    })
+                    .catch(error => console.error('Error fetching slides data:', error));
+            }
+            
+            function createSlides(data) {
+                const slider = document.getElementById('slider');
+                slider.innerHTML = ''; // Pulisce le slide esistenti prima di aggiungerne di nuove
+                data.forEach((item, index) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide' + (index === 0 ? ' active' : '');
+                    slide.innerHTML = `
+                        <div id="${item.tipo}">
+                            ${item.testo}
+                            <img src="${item.immagini.src}" class="${item.immagini.classe}">
+                        </div>
+                    `;
+                    slider.appendChild(slide);
+                });
+            }
+            
+            let slideIndex = 0;
             function showSlides() {
                 let i;
                 let slides = document.getElementsByClassName("slide");
@@ -126,11 +138,13 @@
                 }
                 slideIndex++;
                 if (slideIndex > slides.length) {slideIndex = 1}    
-                slides[slideIndex-1].style.display = "block";  
+                slides[slideIndex - 1].style.display = "block";  
                 setTimeout(showSlides, 15000); // Cambia slide ogni 15 secondi
             }
-            let slideIndex = 1;
-            showSlides();
+            
+            // Inizia il processo
+            fetchSlidesData();
+            
 
             // CUSTOMIZATION OPTIONS
             sf.options = {
