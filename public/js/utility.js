@@ -56,6 +56,9 @@ function mostraOrariBus() {
         .catch(error => console.error('Errore nel recupero degli orari:', error));
 }
 
+
+  
+
 // Ogni 10 secondi controlla la prossima partenza
 mostraOrariBus();
 setInterval(mostraOrariBus, 10000);
