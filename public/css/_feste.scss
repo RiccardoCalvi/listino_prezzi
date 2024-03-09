@@ -1,0 +1,116 @@
+
+#festa {	
+
+	#folletto {
+		z-index: 10;
+		width: 250px;
+		height: 250px;
+		background-image: url('../img/listino_festa_folletto.png');
+		background-size: cover;
+		position: fixed;
+		bottom: 0px; /* Inizialmente nascosto, tranne per una piccola parte */
+		right: -170px;
+		transition: bottom 0.5s ease-in-out;
+	}
+	
+	.folletto-visible {
+		right: -100px !important; /* Affaccia completamente */
+	}
+	
+	
+}
+
+svg {
+	/* transform:scale(0); */
+		transition:1s ease-in-out;
+		position:absolute;
+}
+.animate {
+	/* animation: blossom 2s ease-in-out 0s infinite alternate forwards running; */
+	/* animation-name: blossom-1; */
+	/* animation-duration: 2s; */
+	animation-iteration-count:infinite;
+	animation-fill-mode:forwards;
+	animation-direction:alternate;
+}
+
+@keyframes blossom-0 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.5) rotate(30deg);
+	}
+}
+@keyframes blossom-1 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.45) rotate(60deg);
+	}
+}
+@keyframes blossom-2 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.4) rotate(45deg);
+	}
+}
+@keyframes blossom-3 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.36) rotate(30deg);
+	}
+}
+@keyframes blossom-4 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.3) rotate(45deg);
+	}
+}
+@keyframes blossom-5 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.25) rotate(60deg);
+	}
+}
+@keyframes blossom-6 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.2) rotate(30deg);
+	}
+}
+@keyframes blossom-7 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.15) rotate(60deg);
+	}
+}
+@keyframes blossom-8 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.1) rotate(45deg);
+	}
+}
+@keyframes blossom-9 {
+	0% {
+	transform:scale(0) rotate(0);
+	}
+	100% {
+		transform:scale(0.33) rotate(30deg);
+	}
+}

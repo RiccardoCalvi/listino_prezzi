@@ -1,0 +1,38 @@
+.headcontent{
+	font-family: $font-family_2;
+	margin-bottom: 0;
+}
+
+#header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 25px 0;
+	.logo {
+		display: block;
+		max-width: 350px;
+	}
+		#orologio.headcontent {
+			font-size: 40px;
+			margin-top: 0px;
+		}
+		#data.headcontent {
+			font-size: 25px;
+		}
+	&.tv {
+		justify-content: space-between;
+		margin: 25px 75px;
+		.logo {
+			display: block;
+			max-width: 400px;
+			margin-left: -200px;
+		}
+		#orologio.headcontent {
+			font-size: 50px;
+			margin-top: 0px;
+		}
+		#data.headcontent {
+			font-size: 40px;
+		}
+	}
+}

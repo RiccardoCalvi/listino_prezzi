@@ -1,0 +1,57 @@
+#spotify {
+	width: 60%;
+	#songinfo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		span {
+			margin-left: 2rem;
+		}
+	}
+	#title {
+		font-family: $font-family_2;
+		font-size: 28px;
+		margin-top: 25px;
+	}
+	#artist {
+		font-family: $font-family_2;
+		font-size: 20px;
+		margin-top: 25px;
+	}
+	#cover {
+		width: 150px;
+		height: 150px;
+	}
+	&.tv{
+		width: 25%;
+		#songinfo {
+			flex-direction: column;
+			span {
+				text-align: center;
+				margin: 0;
+			}
+		}
+		#orariContainer {
+			width: 100%;
+			h3 {
+				font-size: 28px;
+				margin-bottom: 0;
+			}
+			.orario {
+				text-align: center;
+				display: block;
+				margin: 1rem 0;
+				h4 {
+					font-size: 24px;
+				}
+				h4, p{
+					margin: 0;
+				}
+				.ora {
+					font-size: 20px;
+				}
+			}
+		}
+
+	}
+}

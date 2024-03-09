@@ -1,0 +1,29 @@
+#footer{
+	display: flex;
+	justify-content: center;
+	.qrcode, .calendario{
+		width: 150px;
+	}
+	div {
+		width: 575px;
+		margin-top: 25px;
+	}
+	#instagram, #eventi{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h5 {
+			margin-right: 10px;
+		}
+	}
+	h5 {
+		text-align: center;
+		font-size: 28px;
+		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		font-size: 24px;
+		margin: 0;
+	}
+}
