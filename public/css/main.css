@@ -108,6 +108,26 @@ svg {
     transform: scale(0.33) rotate(30deg);
   }
 }
+.toContactForm {
+  position: fixed;
+  right: -45%;
+  bottom: 5%;
+  z-index: 16;
+}
+
+.toContactForm_leprechaun {
+  width: 220px !important;
+  height: 290px !important;
+  box-sizing: border-box;
+  background: url("https://www.netgamenv.com/wp-content/themes/netgeme_2018/image/toContactForm/leprechaun-sprite.png") 0 50%;
+  animation: play 3139ms steps(73) infinite;
+}
+
+@keyframes play {
+  to {
+    background-position: -16060px;
+  }
+}
 #footer {
   display: flex;
   justify-content: center;
