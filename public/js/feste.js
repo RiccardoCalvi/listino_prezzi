@@ -9,7 +9,15 @@ if (controllaData('2024-03-16')) {
             blossom();
         }, 6000);
         
+        setTimeout(affacciaFolletto, 2000);
     });
+}
+
+function affacciaFolletto() {
+    const folletto = document.getElementById('folletto');
+    folletto.classList.toggle('folletto-visible');
+
+    setTimeout(affacciaFolletto, Math.random() * 15000 + 2000);
 }
 
 function blossom() {
