@@ -181,7 +181,7 @@ function trovaProssimeNavette(orari, oraAttuale) {
     const prossimaPartenza = linea.orariPartenze.find(ora => ora > oraAttuale);
     return {
       nomeLinea: linea.nomeLinea,
-      prossimaPartenza: prossimaPartenza || "Nessuna partenza imminente"
+      prossimaPartenza: prossimaPartenza || "Nessuna partenza"
     };
   });
 }
