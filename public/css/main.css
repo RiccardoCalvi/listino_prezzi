@@ -578,7 +578,7 @@ svg {
 }
 
 #spotify {
-  width: 60%;
+  width: 55%;
 }
 #spotify #songinfo {
   display: flex;
@@ -590,12 +590,12 @@ svg {
 }
 #spotify #title {
   font-family: "Trocchi", serif;
-  font-size: 28px;
+  font-size: 26px;
   margin-top: 25px;
 }
 #spotify #artist {
   font-family: "Trocchi", serif;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 25px;
 }
 #spotify #cover {

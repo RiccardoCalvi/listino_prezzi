@@ -1,5 +1,5 @@
 #spotify {
-	width: 60%;
+	width: 55%;
 	#songinfo {
 		display: flex;
 		justify-content: center;
@@ -10,12 +10,12 @@
 	}
 	#title {
 		font-family: $font-family_2;
-		font-size: 28px;
+		font-size: 26px;
 		margin-top: 25px;
 	}
 	#artist {
 		font-family: $font-family_2;
-		font-size: 20px;
+		font-size: 18px;
 		margin-top: 25px;
 	}
 	#cover {
